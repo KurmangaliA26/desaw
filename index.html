@@ -1,0 +1,272 @@
+page 253<br><br>
+<form action="/result.php" method="GET">
+<input name="test1"><br><br>
+<input name="test2"><br><br>
+<input type="submit">
+</form>
+<form action="/result.php" method="POST">
+	<input name="test1"><br><br>
+	<input name="test2"><br><br>
+	<input type="submit">
+</form>
+<hr>
+page 255<br><br>
+<form action="/result.php" method="GET">
+	<input name="test1"><br><br>
+	<input name="test2"><br><br>
+	<input name="test3"><br><br>
+	<input type="submit">
+</form>
+<?php
+	var_dump($_GET);     // массив с ключами test1 и test2
+	var_dump($_POST);    // пустой массив
+	var_dump($_REQUEST); // массив с ключами test1 и test2
+?>
+<hr>
+page 256<br><br>1)
+<form action="/result.php" method="GET">
+Name:<input name="test1"><br><br>
+Age:&nbsp&nbsp&nbsp<input name="test2"><br><br>
+<input type="submit">
+</form>
+<br><br>2) Enter your password:
+<form action="/result.php" method="POST">
+	<input type="password" name="pass">
+	<input type="submit">
+</form>
+<?php
+	$pass = '12345';
+?>
+<br><br>3)
+<form action="/result.php" method="GET">
+Year:&nbsp&nbsp&nbsp&nbsp<input name="test1"><br><br>
+Month:<input name="test2"><br><br>
+Day:&nbsp&nbsp&nbsp&nbsp<input name="test3"><br><br>
+<input type="submit">
+</form>
+<hr>
+page 257<br><br>1)
+<form action="" method="GET">
+	Surname:&nbsp&nbsp&nbsp&nbsp<input name="test1"><br><br>
+	Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input name="test2"><br><br>
+	Patroymic:&nbsp<input name="test3"><br><br>
+</form>
+<?php
+	if (!empty($_GET)) {
+		echo $_GET['test1'] + $_GET['test2'];
+	}
+?>
+<hr>
+page 258<br><br>1)
+<form action="" method="GET">
+	Name:&nbsp&nbsp<input name="test2"><br><br>
+	
+</form>
+<hr>
+page 259<br><br>1)
+<form action="" method="GET">
+	City:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input
+		name="test"
+		value=""
+	><br><br>
+	Country:&nbsp&nbsp<input
+		name="test"
+		value=""
+	><br><br>
+	<input type="submit">
+</form>
+<hr>
+page 260<br><br>1)
+<form action="" method="GET">
+	Year:&nbsp&nbsp<input
+		name="test"
+		value=""
+	>
+	<input type="submit">
+</form>
+<hr>
+page 261<br><br>1)
+<form action="" method="GET">
+	<input name="test" value="">
+	<input type="submit">
+</form>
+<hr>
+page 262<br><br>1)
+<form action="" method="GET">
+	Leave your feedback:&nbsp&nbsp<br><br><textarea name="test">Write...</textarea><br><br>
+	<input type="submit">
+</form>
+<hr>
+page 263<br><br>1)
+<form action="" method="GET">
+	<textarea name="test">Переводчик</textarea>
+	<input type="submit">
+</form>
+<?= $_GET['test'] ?? '' ?>
+<hr>
+page 264<br><br>1)
+<form action="" method="GET">
+	Enter your name:&nbsp&nbsp<input name="text"></text><br><br>
+	<input type="checkbox" name="flag">Synchronize the received data<br><br>
+	<input type="submit">
+</form>
+<?php
+	var_dump($_GET['flag']); // 'on' или null
+?>
+<?php
+	if (!empty($_GET)) { // если форма была отправлена
+		if (isset($_GET['flag'])) { // если флажок отмечен
+			echo 'отмечен';
+		} else {
+			echo 'не отмечен';
+		}
+	}
+?>
+<hr>
+page 265<br><br>1)
+<form action="" method="GET">
+	Surname:&nbsp&nbsp&nbsp&nbsp<input name="test1"><br><br>
+	Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input name="test2"><br><br>
+	Patroymic:&nbsp<input name="test3"><br><br>
+	<input type="checkbox" name="flag">Are you 18?<br><br>
+	<input type="submit">
+</form>
+<?php
+	if (!empty($_GET)) {
+		echo $_GET['test1'] + $_GET['test2'];
+	}
+?>
+<hr>
+page 266<br><br>1)
+<form action="" method="GET">
+	<input type="hidden" name="flag" value="0">
+	<input
+		type="checkbox"
+		name="flag"
+		value="1"
+		<?php if (!empty($_GET['flag'])) echo 'checked' ?>1<br><br>
+		<input
+		type="checkbox"
+		name="flag"
+		value="1"
+		<?php if (!empty($_GET['flag'])) echo 'checked' ?>2<br><br>
+		<input
+		type="checkbox"
+		name="flag"
+		value="1"
+		<?php if (!empty($_GET['flag'])) echo 'checked' ?>3<br><br>
+	
+	<input type="submit">
+</form>
+<hr>
+page 267<br><br>1)
+<form action="" method="GET">Choose your gender:<br><br>
+	Man<input type="radio" name="radio" value="1" checked>
+	Woman<input type="radio" name="radio" value="2"><br><br>
+	<input type="submit">
+</form>
+<hr>
+page 268<br><br>1)
+<form action="" method="GET">Choose your language:<br><br>
+	KZ<input type="radio" name="radio" value="1" <?php
+		if (!empty($_GET['radio']) and $_GET['radio'] === '1') {
+			echo 'checked';
+		}
+	?>
+	RU<input type="radio" name="radio" value="2" <?php
+		if (!empty($_GET['radio']) and $_GET['radio'] === '2') {
+			echo 'checked';
+		}
+	?>
+	ENG<input type="radio" name="radio" value="3" <?php
+		if (!empty($_GET['radio']) and $_GET['radio'] === '3') {
+			echo 'checked';
+		}
+	?><br><br>
+	<input type="submit">
+</form>
+<hr>
+page 269<br><br>1)
+<form action="" method="GET">Choose your location:<br><br>
+	<select name="test">
+		<option>Kazakhstan</option>
+		<option>Russia</option>
+		<option>Uzbekstan</option>
+	</select>
+	<input type="submit">
+</form>
+<?php
+	var_dump($_GET['test']); // 'item1', 'item2' или 'item3'
+?>
+<hr>
+page 270<br><br>1)
+<form action="" method="GET">Choose your language:<br><br>
+	<select name="test">
+		<option value="1">KZ</option>
+		<option value="2">RU</option>
+		<option value="3">EG</option>
+	</select>
+	<input type="submit">
+</form>
+<?php
+	var_dump($_GET['test']); // '1', '2' или '3'
+?>
+<hr>
+page 271<br><br>1)
+<form action="" method="GET">Choose your language:<br><br>
+	<select name="test">
+		<option value="1" <?php
+			if (!empty($_GET['test']) and $_GET['test'] === '1') {
+				echo 'selected';
+			}
+		?>KZ</option>
+		<option value="2" <?php
+			if (!empty($_GET['test']) and $_GET['test'] === '2') {
+				echo 'selected';
+			}
+		?>RU</option>
+		<option value="3" <?php
+			if (!empty($_GET['test']) and $_GET['test'] === '3') {
+				echo 'selected';
+			}
+		?>EG</option>
+	</select>
+	<input type="submit">
+</form><hr>
+page 272<br><br>1)
+<form action="/result.php" method="GET">
+	<input name="test1"><br><br>
+	<input type="submit">
+	</form>
+	<br><br>2)
+<form action="/result.php" method="GET">
+	<input name="test1"><br><br>
+	<input type="submit">
+	</form>
+	3)<form action="/result.php" method="GET">
+		<br><br><textarea name="test">1-Hello 2-Bye</textarea><br><br>
+		<input type="submit">
+	</form>
+<hr>
+page 273<br><br>1)
+<a href="">Ссылка 1</a><br><br>
+<a href="">Ссылка 2</a><br><br>
+<a href="">Ссылка 3</a>
+<br><br>2)
+<a href="">Ссылка 1</a><br><br>
+<a href="">Ссылка 2</a><br><br>
+<a href="">Ссылка 3</a><br><br>
+<a href="">Ссылка 4</a><br><br>
+<a href="">Ссылка 5</a><br><br>
+<a href="">Ссылка 6</a><br><br>
+<a href="">Ссылка 7</a><br><br>
+<a href="">Ссылка 8</a><br><br>
+<a href="">Ссылка 9</a><br><br>
+<a href="">Ссылка 10</a>
+<hr>
+page 274<br><br>1)
+<form action="" method="GET">
+	Enter a number:&nbsp&nbsp&nbsp&nbsp<input name="test1"><br><br>
+	Enter a number:&nbsp&nbsp&nbsp&nbsp<input name="test2"><br><br>
+	<input type="submit">
+</form>
